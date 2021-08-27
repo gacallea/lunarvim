@@ -11,8 +11,9 @@ lvim.leader = "space"
 lvim.keys.normal_mode["<F1>"] = ":<Esc>"
 lvim.keys.normal_mode["<F2>"] = ":NvimTreeToggle<cr>"
 lvim.keys.normal_mode["<Esc>"] = ":nohlsearch<cr>"
-lvim.keys.normal_mode["<S-l>"] = ":bnext<cr>"
 lvim.keys.normal_mode["<S-h>"] = ":bprev<cr>"
+lvim.keys.normal_mode["<S-l>"] = ":bnext<cr>"
+lvim.keys.normal_mode["<leader>ps"] = ":PackerSync<cr>"
 
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = ""
@@ -36,7 +37,7 @@ lvim.keys.normal_mode["<S-h>"] = ":bprev<cr>"
 lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.side = "left"
-lvim.builtin.nvimtree.show_icons.git = 0
+lvim.builtin.nvimtree.show_icons.git = 1
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = "maintained"
