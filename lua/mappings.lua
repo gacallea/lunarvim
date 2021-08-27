@@ -6,15 +6,17 @@ lvim.keys.normal_mode["<F2>"] = ":NvimTreeToggle<cr>"
 lvim.keys.normal_mode["<Esc>"] = ":nohlsearch<cr>"
 
 -- barbar
-lvim.keys.normal_mode["<S-h>"] = ":BufferPrevious<cr>"
-lvim.keys.normal_mode["<S-l>"] = ":BufferNext<cr>"
-lvim.keys.normal_mode["<S-c>"] = ":BufferClose<cr>"
+lvim.keys.normal_mode["<S-h>"] = nil
+lvim.keys.normal_mode["<S-l>"] = nil
+lvim.keys.normal_mode["<leader><Left>"] = ":BufferPrevious<cr>"
+lvim.keys.normal_mode["<leader><Right>"] = ":BufferNext<cr>"
+lvim.keys.normal_mode["<leader><Down>"] = ":BufferClose<cr>"
 
 -- packer
 lvim.keys.normal_mode["<leader>ps"] = ":PackerSync<cr>"
 
 -- dash docs app
-lvim.keys.normal_mode["<S-d>"] = ":Dash<cr>"
+lvim.keys.normal_mode["<leader>d"] = ":Dash<cr>"
 
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = ""

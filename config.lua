@@ -16,6 +16,9 @@ lvim.relativenumber = true
 require('looknfeel')
 -- keymappings
 require('mappings')
+-- autocommands
+require('autocmds')
+vim.cmd('source ~/.config/lvim/vim/autocmd.vim')
 -- additional plugins
 require('moreplugs')
 
@@ -53,7 +56,3 @@ lvim.builtin.treesitter.highlight.enabled = true
 --   }
 -- }
 
--- Autocommands (https://neovim.io/doc/user/autocmd.html)
--- lvim.autocommands.custom_groups = {
---   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
--- }
