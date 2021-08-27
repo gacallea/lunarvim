@@ -1,4 +1,3 @@
-
 lvim.leader = "space"
 
 -- generic keymapping
@@ -13,6 +12,9 @@ lvim.keys.normal_mode["<S-c>"] = ":BufferClose<cr>"
 
 -- packer
 lvim.keys.normal_mode["<leader>ps"] = ":PackerSync<cr>"
+
+-- dash docs app
+lvim.keys.normal_mode["<S-d>"] = ":Dash<cr>"
 
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = ""
