@@ -37,6 +37,7 @@ local function lspservername()
   return msg
 end
 
+-- Lualine setup
 require'lualine'.setup {
   options = {
     theme = 'material-nvim'
@@ -48,7 +49,7 @@ require'lualine'.setup {
       {'diagnostics', sources = {'nvim_lsp'},
         sections = {'error', 'warn', 'info', 'hint'},
         symbols = {error = ' ', warn = ' ', info = ' ', hint = ''},
-        color_error = colors.red, color_warn = colors.yellow, color_info = colors.cyan
+        color_error = {colors.red, color_warn = colors.yellow, color_info = colors.cyan},
       }
     },
     lualine_c = {'filename'},

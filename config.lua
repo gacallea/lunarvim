@@ -3,6 +3,8 @@
 -- general
 lvim.format_on_save = true
 lvim.lint_on_save = true
+
+-- layout/UI/look and feel
 require('looknfeel')
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
@@ -73,7 +75,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- Additional Plugins
 lvim.plugins = {
     {"marko-cerovac/material.nvim"},
-    {"hoob3rt/lualine.nvim"},
+    {"shadmansaleh/lualine.nvim"},
     {"akinsho/bufferline.nvim"},
     {"glepnir/indent-guides.nvim"},
 }
