@@ -1,6 +1,9 @@
---  Material Theme
+-- some necessary builtin settings
+lvim.builtin.dashboard.active = true
+lvim.builtin.terminal.active = true
 lvim.builtin.galaxyline.active = false
-lvim.builtin.bufferline.active = false
+
+--  Material Theme
 vim.g.material_italic_comments = true
 vim.g.material_borders = true
 vim.g.material_style = "palenight"
@@ -49,7 +52,10 @@ require'lualine'.setup {
       {'diagnostics', sources = {'nvim_lsp'},
         sections = {'error', 'warn', 'info', 'hint'},
         symbols = {error = ' ', warn = ' ', info = ' ', hint = ''},
-        color_error = {colors.red, color_warn = colors.yellow, color_info = colors.cyan},
+        color_error = {fg = colors.red},
+        color_warn = {fg = colors.yellow},
+        color_info = {fg = colors.cyan},
+        color_hint = {fg = colors.green},
       }
     },
     lualine_c = {'filename'},
@@ -61,36 +67,11 @@ require'lualine'.setup {
   extensions = {}
 }
 
--- BufferLine
-require('bufferline').setup {
-  options = {
-    numbers = "buffer_id",
-    number_style = "",
-    diagnostics = false,
-    offsets = {
-      {
-        filetype = "NvimTree",
-        text = "File Explorer",
-        highlight = "Directory",
-        text_align = "center"
-      }
-    },
-    show_buffer_icons = true, -- disable filetype icons for buffers
-    show_buffer_close_icons = true,
-    show_close_icon = true,
-    show_tab_indicators = true,
-    persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
-    separator_style = "thick",
-    enforce_regular_tabs = false,
-    always_show_bufferline = true,
-    sort_by = 'id'
-  }
-}
-
 -- NVimTree
-vim.g.nvim_tree_width = 50
+lvim.builtin.nvimtree.side = "left"
+lvim.builtin.nvimtree.width = 50
+lvim.builtin.nvimtree.show_icons.tree_width = 50
+lvim.builtin.nvimtree.show_icons.git = 1
 vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_highlight_opened_files = 1
 vim.g.nvim_tree_add_trailing = 1
-vim.g.nvim_tree_group_empty = 1
-vim.g.nvim_tree_auto_open = 1

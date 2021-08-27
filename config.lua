@@ -1,45 +1,26 @@
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
+vim.o.showmatch = true
+vim.o.autowrite  = true
+vim.o.relativenumber = true
+vim.o.colorcolumn="80"
+vim.opt.listchars = {eol = '↲', tab = '▸ ', trail = '¬'}
+vim.o.foldmethod="expr"
+vim.o.foldexpr="nvim_treesitter#foldexpr()"
 
 -- general
 lvim.format_on_save = true
 lvim.lint_on_save = true
+lvim.relativenumber = true
 
 -- layout/UI/look and feel
 require('looknfeel')
-
--- keymappings [view all the defaults by pressing <leader>Lk]
-lvim.leader = "space"
--- add your own keymapping
-lvim.keys.normal_mode["<F1>"] = ":<Esc>"
-lvim.keys.normal_mode["<F2>"] = ":NvimTreeToggle<cr>"
-lvim.keys.normal_mode["<Esc>"] = ":nohlsearch<cr>"
-lvim.keys.normal_mode["<S-h>"] = ":bprev<cr>"
-lvim.keys.normal_mode["<S-l>"] = ":bnext<cr>"
-lvim.keys.normal_mode["<leader>ps"] = ":PackerSync<cr>"
-
--- unmap a default keymapping
--- lvim.keys.normal_mode["<C-Up>"] = ""
--- edit a default keymapping
--- lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
-
--- Use which-key to add extra bindings with the leader-key prefix
--- lvim.builtin.which_key.mappings["P"] = { "<cmd>lua require'telescope'.extensions.project.project{}<CR>", "Projects" }
--- lvim.builtin.which_key.mappings["t"] = {
---   name = "+Trouble",
---   r = { "<cmd>Trouble lsp_references<cr>", "References" },
---   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
---   d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnosticss" },
---   q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
---   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
---   w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss" },
--- }
+-- keymappings
+require('mappings')
+-- additional plugins
+require('moreplugs')
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
-lvim.builtin.dashboard.active = true
-lvim.builtin.terminal.active = true
-lvim.builtin.nvimtree.side = "left"
-lvim.builtin.nvimtree.show_icons.git = 1
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = "maintained"
@@ -71,14 +52,6 @@ lvim.builtin.treesitter.highlight.enabled = true
 --     args = {}
 --   }
 -- }
-
--- Additional Plugins
-lvim.plugins = {
-    {"marko-cerovac/material.nvim"},
-    {"shadmansaleh/lualine.nvim"},
-    {"akinsho/bufferline.nvim"},
-    {"glepnir/indent-guides.nvim"},
-}
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
