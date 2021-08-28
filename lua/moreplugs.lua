@@ -4,7 +4,7 @@ lvim.plugins = {
     {"shadmansaleh/lualine.nvim"},
     {"glepnir/indent-guides.nvim"},
     {"rizzatti/dash.vim"},
-    {"lewis6991/spellsitter.nvim"},
+    -- {"lewis6991/spellsitter.nvim"},
 }
 
 
