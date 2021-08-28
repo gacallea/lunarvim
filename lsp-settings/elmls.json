@@ -1,0 +1,10 @@
+{
+  "languageserver": {
+    "elmLS": {
+      "elmReviewDiagnostics": "warning",
+      "disableElmLSDiagnostics": false,
+      "skipInstallPackageConfirmation": false,
+      "onlyUpdateDiagnosticsOnSave": true
+    }
+  }
+}
