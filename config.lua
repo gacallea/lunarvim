@@ -30,6 +30,11 @@ vim.cmd('source ~/.config/lvim/vim/autocmd.vim')
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 
+-- Compe
+lvim.builtin.compe.active = true
+lvim.builtin.compe.autocomplete = true
+lvim.builtin.autopairs.active = true
+
 -- Treesitter syntax and parsing
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = "maintained"
