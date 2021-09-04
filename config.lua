@@ -7,7 +7,7 @@ vim.o.foldmethod="expr"
 vim.o.foldexpr="nvim_treesitter#foldexpr()"
 vim.o.relativenumber = true
 vim.o.undofile = false
-vim.o.spell = true
+-- vim.o.spell = true
 vim.o.spelllang = "en"
 vim.o.startofline = true
 
@@ -46,5 +46,3 @@ lvim.builtin.dap.active = true
 lvim.builtin.dap.install = "python_dbg"
 
 -- Language Server
-lvim.lang.python.formatters = { { exe = "black" } }
-lvim.lang.python.linters = { { exe = "flake8" } }

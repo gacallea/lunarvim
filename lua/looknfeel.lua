@@ -27,7 +27,7 @@ local colors = {
 
  -- Lsp server name .
 local function lspservername()
-  local msg = 'No Active Lsp'
+  -- local msg = 'No Active Lsp'
   local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
   local clients = vim.lsp.get_active_clients()
   if next(clients) == nil then return nil end
@@ -37,7 +37,7 @@ local function lspservername()
       return client.name
     end
   end
-  return msg
+  -- return msg
 end
 
 -- Lualine setup
@@ -68,10 +68,11 @@ require'lualine'.setup {
 }
 
 -- NVimTree
-lvim.builtin.nvimtree.side = "left"
-lvim.builtin.nvimtree.width = 50
-lvim.builtin.nvimtree.show_icons.tree_width = 50
-lvim.builtin.nvimtree.show_icons.git = 1
+-- lvim.builtin.nvimtree.side = "left"
+-- lvim.builtin.nvimtree.width = 50
+-- lvim.builtin.nvimtree.show_icons.tree_width = 50
+-- lvim.builtin.nvimtree.show_icons.git = 1
+vim.g.nvim_tree_auto_open = 1
 vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_highlight_opened_files = 1
 vim.g.nvim_tree_add_trailing = 1
