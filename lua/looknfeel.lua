@@ -1,81 +1,65 @@
--- some necessary builtin settings
+-- builtin settings
 lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = true
-lvim.builtin.galaxyline.active = false
 
---  Material Theme
-vim.g.material_italic_comments = true
-vim.g.material_borders = true
+-- Material Theme
 vim.g.material_style = "palenight"
+
+require('material').setup({
+
+	contrast = true, -- Enable contrast for sidebars, floating windows and popup menus like Nvim-Tree
+	borders = true, -- Enable borders between verticaly split windows
+
+	italics = {
+		comments = true, -- Enable italic comments
+		keywords = false, -- Enable italic keywords
+		functions = false, -- Enable italic functions
+		strings = false, -- Enable italic strings
+		variables = false -- Enable italic variables
+	},
+
+	contrast_windows = { -- Specify which windows get the contrasted (darker) background
+		"terminal", -- Darker terminal background
+		"packer", -- Darker packer background
+		"qf" -- Darker qf list background
+	},
+
+	text_contrast = {
+		lighter = false, -- Enable higher contrast text for lighter style
+		darker = true -- Enable higher contrast text for darker style
+	},
+
+	disable = {
+		background = false, -- Prevent the theme from setting the background (NeoVim then uses your teminal background)
+		term_colors = false, -- Prevent the theme from setting terminal colors
+		eob_lines = false -- Hide the end-of-buffer lines
+	},
+
+	custom_highlights = {} -- Overwrite highlights with your own
+})
 lvim.colorscheme = "material"
 
 -- Lualine
--- Color table for highlights
-local colors = {
-  bg = '#202328',
-  fg = '#bbc2cf',
-  yellow = '#ECBE7B',
-  cyan = '#008080',
-  darkblue = '#081633',
-  green = '#98be65',
-  orange = '#FF8800',
-  violet = '#a9a1e1',
-  magenta = '#c678dd',
-  blue = '#51afef',
-  red = '#ec5f67'
-}
-
- -- Lsp server name .
-local function lspservername()
-  -- local msg = 'No Active Lsp'
-  local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-  local clients = vim.lsp.get_active_clients()
-  if next(clients) == nil then return nil end
-  for _, client in ipairs(clients) do
-    local filetypes = client.config.filetypes
-    if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-      return client.name
-    end
-  end
-  -- return msg
-end
-
--- Lualine setup
-require'lualine'.setup {
-  options = {
-    theme = 'material-nvim'
-  },
-  sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff',
-      {lspservername, icon = ' '},
-      {'diagnostics', sources = {'nvim_lsp'},
-        sections = {'error', 'warn', 'info', 'hint'},
-        symbols = {error = ' ', warn = ' ', info = ' ', hint = ''},
-        color_error = {fg = colors.red},
-        color_warn = {fg = colors.yellow},
-        color_info = {fg = colors.cyan},
-        color_hint = {fg = colors.green},
-      }
-    },
-    lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
-  },
-  tabline = {},
-  extensions = {}
-}
+local components = require "core.lualine.components"
+lvim.builtin.lualine.style = "default"
+lvim.builtin.lualine.options.theme = "material-nvim"
+lvim.builtin.lualine.options.disabled_filetypes = { "dashboard", "NvimTree", "Outline" }
+lvim.builtin.lualine.sections.lualine_a = { "mode" }
+lvim.builtin.lualine.sections.lualine_b = { components.branch, components.diff, components.lsp, components.diagnostics }
+lvim.builtin.lualine.sections.lualine_c = { components.python_env, components.filename }
+lvim.builtin.lualine.sections.lualine_x = { components.treesitter, components.filetype }
+lvim.builtin.lualine.sections.lualine_y = { "progress" }
+lvim.builtin.lualine.sections.lualine_z = { "location", components.scrollbar }
+lvim.builtin.lualine.extensions = {"nvim-tree"}
 
 -- NVimTree
--- lvim.builtin.nvimtree.side = "left"
--- lvim.builtin.nvimtree.width = 50
--- lvim.builtin.nvimtree.show_icons.tree_width = 50
--- lvim.builtin.nvimtree.show_icons.git = 1
-vim.g.nvim_tree_auto_open = 1
-vim.g.nvim_tree_indent_markers = 1
-vim.g.nvim_tree_highlight_opened_files = 1
-vim.g.nvim_tree_add_trailing = 1
-vim.g.nvim_tree_git_hl = 1
-vim.g.nvim_tree_group_empty = 1
-vim.g.nvim_tree_lsp_diagnostics = 1
+lvim.builtin.nvimtree.side = "left"
+lvim.builtin.nvimtree.width = 42
+lvim.builtin.nvimtree.show_icons.tree_width = 42
+lvim.builtin.nvimtree.show_icons.git = 1
+lvim.builtin.nvimtree.indent_markers = 1
+lvim.builtin.nvimtree.highlight_opened_files = 1
+lvim.builtin.nvimtree.add_trailing = 1
+lvim.builtin.nvimtree.git_hl = 1
+lvim.builtin.nvimtree.group_empty = 1
+lvim.builtin.nvimtree.lsp_diagnostics = 1
