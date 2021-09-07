@@ -9,6 +9,7 @@ vim.opt.undofile = false
 vim.opt.spell = true
 vim.opt.spelllang = "en"
 vim.opt.startofline = true
+vim.opt.scrolloff = 0
 
 -- general
 lvim.log.level = "warn"
