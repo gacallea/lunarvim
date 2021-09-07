@@ -5,4 +5,4 @@ autocmd BufReadPost *
   \ |   exe "normal! g`\""
   \ | endif
 
-
+autocmd BufWritePre * :%s/\s\+$//e
