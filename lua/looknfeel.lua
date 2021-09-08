@@ -1,7 +1,3 @@
--- builtin settings
-lvim.builtin.dashboard.active = true
-lvim.builtin.terminal.active = true
-
 -- Material Theme
 vim.g.material_style = "palenight"
 

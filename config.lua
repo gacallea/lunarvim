@@ -10,11 +10,13 @@ vim.opt.spell = true
 vim.opt.spelllang = "en"
 vim.opt.startofline = true
 vim.opt.scrolloff = 0
+vim.opt.wrap = false
 
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.lint_on_save = true
+lvim.transparent_window = false
 
 -- additional plugins
 require('moreplugs')
@@ -28,10 +30,10 @@ vim.cmd('source ~/.config/lvim/vim/autocmd.vim')
 -- languages, spelling, grammar
 require('lanngram')
 
---- Compe
-lvim.builtin.compe.active = true
-lvim.builtin.compe.autocomplete = true
-lvim.builtin.autopairs.active = true
+-- builtin settings
+lvim.builtin.dashboard.active = true
+lvim.builtin.terminal.active = true
+lvim.builtin.bufferline.active = true
 
 --- DAP debugger
 lvim.builtin.dap.active = true
@@ -45,15 +47,15 @@ filled in as strings with either
 a global executable or a path to
 an executable
 ]]
--- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
-
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 
--- if you don't want all the parsers change this to a table of the ones you want
+-- Treesitter
 lvim.builtin.treesitter.ensure_installed = "maintained"
 lvim.builtin.treesitter.ignore_install = {}
+lvim.builtin.treesitter.autotag.enable = true
+lvim.builtin.treesitter.playground.enable = true
 lvim.builtin.treesitter.highlight.enabled = true
 
 -- generic LSP settings
