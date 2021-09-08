@@ -39,17 +39,9 @@ lvim.builtin.bufferline.active = true
 lvim.builtin.dap.active = true
 lvim.builtin.dap.install = "python_dbg"
 
---[[
-lvim is the global options object
-
-Linters should be
-filled in as strings with either
-a global executable or a path to
-an executable
-]]
-
--- TODO: User Config for predefined plugins
--- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
+-- LSP
+lvim.lsp.diagnostics.virtual_text = false
+-- lvim.lsp.override = { "java" }
 
 -- Treesitter
 lvim.builtin.treesitter.ensure_installed = "maintained"
@@ -84,3 +76,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 --   end
 -- end
 
+-- for finding syntax ids for non TS enabled languages
+vim.cmd [[
+map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
+]]
