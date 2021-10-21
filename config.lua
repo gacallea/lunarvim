@@ -20,13 +20,13 @@ lvim.transparent_window = false
 
 -- additional plugins
 require('moreplugs')
+-- auto commands
+require('autocmds')
+vim.cmd('source ~/.config/lvim/vim/autocmd.vim')
 -- layout/UI/look and feel
 require('looknfeel')
 -- key mappings
 require('mappings')
--- auto commands
-require('autocmds')
-vim.cmd('source ~/.config/lvim/vim/autocmd.vim')
 -- languages, spelling, grammar
 require('lanngram')
 
@@ -45,24 +45,7 @@ lvim.builtin.treesitter.playground.enable = true
 lvim.builtin.treesitter.highlight.enabled = true
 
 -- LSP
-lvim.lsp.automatic_servers_installation = true
 lvim.lsp.diagnostics.virtual_text = false
+lvim.lsp.automatic_servers_installation = true
+--lvim.lsp.templates_dir = join_paths(get_runtime_dir(), "after", "ftplugin")
 
--- Languages
--- Python
-lvim.lang.python.formatters = { { exe = "black" } }
-lvim.lang.python.linters = { { exe = "flake8" } }
--- Javascript
-lvim.lang.javascript.formatters = { { exe = "prettier" } }
-lvim.lang.javascriptreact.formatters = lvim.lang.javascript.formatters
-lvim.lang.javascript.linters = { { exe = "eslint" } }
-lvim.lang.javascriptreact.linters = lvim.lang.javascript.linters
--- Typescript
--- exe value can be "prettier", "prettierd", "eslint", or "eslint_d"
-lvim.lang.typescript.formatters = { { exe = "prettier" } }
-lvim.lang.typescriptreact.formatters = lvim.lang.typescript.formatters
--- exe value can be "eslint" or "eslint_d"
-lvim.lang.typescript.linters = { { exe = "eslint" } }
-lvim.lang.typescriptreact.linters = lvim.lang.typescript.linters
--- JSON
-lvim.lang.json.formatters = { { exe = 'prettier' } }

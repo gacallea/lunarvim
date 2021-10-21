@@ -52,4 +52,4 @@ lvim.builtin.nvimtree.highlight_opened_files = 1
 lvim.builtin.nvimtree.add_trailing = 1
 lvim.builtin.nvimtree.git_hl = 1
 lvim.builtin.nvimtree.group_empty = 1
-lvim.builtin.nvimtree.lsp_diagnostics = 1
+--lvim.builtin.nvimtree.lsp_diagnostics = 1
