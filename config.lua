@@ -45,6 +45,7 @@ lvim.builtin.treesitter.playground.enable = true
 lvim.builtin.treesitter.highlight.enabled = true
 
 -- LSP
+lvim.lsp.automatic_servers_installation = true
 lvim.lsp.diagnostics.virtual_text = false
 
 -- Languages

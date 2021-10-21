@@ -55,11 +55,11 @@ lvim.plugins = {
     {
         "pwntester/octo.nvim",
         event = "BufRead",
-  },
-    {
-        "mattn/vim-gist",
-        event = "BufRead",
-        requires = "mattn/webapi-vim"
     },
+    --{
+    --    "mattn/vim-gist",
+    --    event = "BufRead",
+    --    requires = "mattn/webapi-vim"
+    --},
 }
 
