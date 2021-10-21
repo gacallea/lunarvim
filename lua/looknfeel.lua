@@ -2,10 +2,8 @@
 vim.g.material_style = "palenight"
 
 require('material').setup({
-
 	contrast = true, -- Enable contrast for sidebars, floating windows and popup menus like Nvim-Tree
 	borders = true, -- Enable borders between verticaly split windows
-
 	italics = {
 		comments = true, -- Enable italic comments
 		keywords = false, -- Enable italic keywords
@@ -13,30 +11,26 @@ require('material').setup({
 		strings = false, -- Enable italic strings
 		variables = false -- Enable italic variables
 	},
-
 	contrast_windows = { -- Specify which windows get the contrasted (darker) background
 		"terminal", -- Darker terminal background
 		"packer", -- Darker packer background
 		"qf" -- Darker qf list background
 	},
-
 	text_contrast = {
 		lighter = false, -- Enable higher contrast text for lighter style
 		darker = true -- Enable higher contrast text for darker style
 	},
-
 	disable = {
 		background = false, -- Prevent the theme from setting the background (NeoVim then uses your teminal background)
 		term_colors = false, -- Prevent the theme from setting terminal colors
 		eob_lines = false -- Hide the end-of-buffer lines
 	},
-
 	custom_highlights = {} -- Overwrite highlights with your own
 })
 lvim.colorscheme = "material"
 
 -- Lualine
-local components = require "core.lualine.components"
+local components = require("lvim.core.lualine.components")
 lvim.builtin.lualine.style = "default"
 lvim.builtin.lualine.options.theme = "material-nvim"
 lvim.builtin.lualine.options.disabled_filetypes = { "dashboard", "NvimTree", "Outline" }
@@ -49,7 +43,7 @@ lvim.builtin.lualine.sections.lualine_z = { "location", components.scrollbar }
 lvim.builtin.lualine.extensions = {"nvim-tree"}
 
 -- NVimTree
-lvim.builtin.nvimtree.side = "left"
+lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.width = 42
 lvim.builtin.nvimtree.show_icons.tree_width = 42
 lvim.builtin.nvimtree.show_icons.git = 1
