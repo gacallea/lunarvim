@@ -3,7 +3,6 @@ lvim.leader = "space"
 
 -- generic keymapping
 lvim.keys.normal_mode["<F1>"] = ":<Esc>"
-lvim.keys.normal_mode["<F2>"] = ":NvimTreeToggle<cr>"
 lvim.keys.normal_mode["<Esc>"] = ":nohlsearch<cr>"
 
 -- which-keys
@@ -71,3 +70,10 @@ lvim.builtin.which_key.mappings["r"] = {
   w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
   f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
 }
+
+-- SYMBOLS OUTLINE
+lvim.builtin.which_key.mappings["S"] = {
+  name = "Symbols",
+  s = { "<cmd>SymbolsOutline<cr>", "Show Symbols" },
+}
+

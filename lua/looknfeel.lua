@@ -44,8 +44,8 @@ lvim.builtin.lualine.extensions = {"nvim-tree"}
 
 -- NVimTree
 lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.width = 42
-lvim.builtin.nvimtree.show_icons.tree_width = 42
+lvim.builtin.nvimtree.width = 28
+lvim.builtin.nvimtree.show_icons.tree_width = 28
 lvim.builtin.nvimtree.show_icons.git = 1
 lvim.builtin.nvimtree.indent_markers = 1
 lvim.builtin.nvimtree.highlight_opened_files = 1

@@ -11,6 +11,7 @@ vim.opt.spelllang = "en"
 vim.opt.startofline = true
 vim.opt.scrolloff = 0
 vim.opt.wrap = false
+vim.opt.mouse = "a"
 
 -- general
 lvim.log.level = "warn"
@@ -38,14 +39,35 @@ lvim.builtin.terminal.active = true
 lvim.builtin.bufferline.active = true
 
 -- Treesitter
-lvim.builtin.treesitter.ensure_installed = "maintained"
-lvim.builtin.treesitter.ignore_install = {}
+lvim.builtin.treesitter.ensure_installed = {
+  "bash",
+  "css",
+  "dockerfile",
+  "elixir",
+  "elm",
+  "graphql",
+  -- "haskell",
+  "html",
+  "javascript",
+  "json",
+  "lua",
+  "nix",
+  "python",
+  "regex",
+  "scss",
+  "supercollider",
+  "toml",
+  "tsx",
+  "typescript",
+  "yaml",
+}
+lvim.builtin.treesitter.ignore_install = { "java" }
 lvim.builtin.treesitter.autotag.enable = true
 lvim.builtin.treesitter.playground.enable = true
 lvim.builtin.treesitter.highlight.enabled = true
 
 -- LSP
 lvim.lsp.diagnostics.virtual_text = false
-lvim.lsp.automatic_servers_installation = true
+lvim.lsp.automatic_servers_installation = false
 --lvim.lsp.templates_dir = join_paths(get_runtime_dir(), "after", "ftplugin")
 
