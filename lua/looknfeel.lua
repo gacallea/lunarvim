@@ -39,7 +39,7 @@ lvim.builtin.lualine.sections.lualine_b = { components.branch, components.diff, 
 lvim.builtin.lualine.sections.lualine_c = { components.python_env, components.filename }
 lvim.builtin.lualine.sections.lualine_x = { components.treesitter, components.filetype }
 lvim.builtin.lualine.sections.lualine_y = { "progress" }
-lvim.builtin.lualine.sections.lualine_z = { "location", components.scrollbar }
+lvim.builtin.lualine.sections.lualine_z = { "location" }
 lvim.builtin.lualine.extensions = {"nvim-tree"}
 
 -- NVimTree (disabled, I use telescope)

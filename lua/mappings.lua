@@ -4,6 +4,7 @@ lvim.leader = "space"
 -- function keys row keymapping
 lvim.keys.normal_mode["<Esc>"] = ":nohlsearch<cr>" -- clear search highlight
 lvim.keys.normal_mode["<F1>"] = ":Dash<cr>" -- dash docs app
+lvim.keys.normal_mode["<F2>"] = ":MinimapToggle<cr>" -- toogle minimap
 -- GOTO PREVIEW
 lvim.keys.normal_mode["<F7>"] = "<cmd>lua require('goto-preview').close_all_win()<cr>"
 lvim.keys.normal_mode["<F8>"] = "<cmd>lua require('goto-preview').goto_preview_definition()<cr>"
