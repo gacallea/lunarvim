@@ -2,12 +2,11 @@
 lvim.leader = "space"
 
 -- generic keymapping
-lvim.keys.normal_mode["<F1>"] = ":<Esc>"
-lvim.keys.normal_mode["<Esc>"] = ":nohlsearch<cr>"
-
--- which-keys
-lvim.builtin.which_key.mappings["gd"] = { "<cmd>DiffviewOpen<CR>", "Git Diff", }
-lvim.builtin.which_key.mappings["gh"] = { "<cmd>DiffviewFileHistory<CR>", "File History", }
+lvim.keys.normal_mode["<Esc>"] = ":nohlsearch<cr>" -- clear search highlight
+lvim.keys.normal_mode["<F1>"] = ":Dash<cr>" -- dash docs app
+lvim.keys.normal_mode["<F10>"] = ":Telescope lsp_references<cr>"
+lvim.keys.normal_mode["<F11>"] = ":Telescope lsp_document_symbols<cr>"
+lvim.keys.normal_mode["<F12>"] = ":Telescope lsp_dynamic_workspace_symbols<cr>"
 
 -- barbar
 lvim.keys.normal_mode["<S-h>"] = nil
@@ -16,30 +15,19 @@ lvim.keys.normal_mode["<leader><Left>"] = ":BufferPrevious<cr>"
 lvim.keys.normal_mode["<leader><Right>"] = ":BufferNext<cr>"
 lvim.keys.normal_mode["<leader><Down>"] = ":BufferClose<cr>"
 
--- dash docs app
-lvim.keys.normal_mode["<leader>d"] = ":Dash<cr>"
 
 -- TELESCOPE
--- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
--- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
-local _, actions = pcall(require, "telescope.actions")
-lvim.builtin.telescope.defaults.mappings = {
-  -- for input mode
-  i = {
-    ["<C-j>"] = actions.move_selection_next,
-    ["<C-k>"] = actions.move_selection_previous,
-    ["<C-n>"] = actions.cycle_history_next,
-    ["<C-p>"] = actions.cycle_history_prev,
-  },
-  -- for normal mode
-  n = {
-    ["<C-j>"] = actions.move_selection_next,
-    ["<C-k>"] = actions.move_selection_previous,
-  },
+lvim.builtin.which_key.mappings["T"] = {
+  name = "+Telescope",
+  P = { "<cmd>Telescope projects<cr>", "Projects" },
+  g = { "<cmd>Telescope live_grep<cr>", "Grep" },
+  m = { "<cmd>Telescope man_pages<cr>", "man pages" },
 }
 
--- Use which-key to add extra bindings with the leader-key prefix
-lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+-- use telescope as file file_browser
+lvim.builtin.which_key.mappings["e"] = { "<cmd>Telescope file_browser<cr>", "Explorer", }
+-- octo extension
+-- lvim.builtin.telescope.extensions.octo = true
 
 -- TROUBLE
 lvim.builtin.which_key.mappings["t"] = {
@@ -52,8 +40,16 @@ lvim.builtin.which_key.mappings["t"] = {
   w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss" },
 }
 
+-- additional commands for ["g"]
+lvim.builtin.which_key.mappings["gf"] = { "<cmd>Telescope git_files<cr>", "Git Files", }
+lvim.builtin.which_key.mappings["gd"] = { "<cmd>DiffviewOpen -uno<cr>", "Git Diff", }
+lvim.builtin.which_key.mappings["gh"] = { "<cmd>DiffviewFileHistory<cr>", "File History", }
+lvim.builtin.which_key.mappings["gy"] = { "<cmd>lua require\"gitlinker\".get_buf_range_url(\"n\", {action_callback = require\"gitlinker.actions\".open_in_browser})<cr>', {silent = true})", "GitLinker" }
+lvim.builtin.which_key.vmappings["gy"] = { ":lua require\"gitlinker\".get_buf_range_url(\"v\", {action_callback = require\"gitlinker.actions\".open_in_browser})<cr>', {})", "GitLinker" }
+
+
 -- GIST
-lvim.builtin.which_key.mappings.g["G"] = {
+lvim.builtin.which_key.mappings["G"] = {
   name = "Gist",
   a = { "<cmd>Gist -b -a<cr>", "Create Anon" },
   d = { "<cmd>Gist -d<cr>", "Delete" },
@@ -69,11 +65,5 @@ lvim.builtin.which_key.mappings["r"] = {
   r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
   w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
   f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
-}
-
--- SYMBOLS OUTLINE
-lvim.builtin.which_key.mappings["S"] = {
-  name = "Symbols",
-  s = { "<cmd>SymbolsOutline<cr>", "Show Symbols" },
 }
 

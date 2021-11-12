@@ -42,14 +42,19 @@ lvim.builtin.lualine.sections.lualine_y = { "progress" }
 lvim.builtin.lualine.sections.lualine_z = { "location", components.scrollbar }
 lvim.builtin.lualine.extensions = {"nvim-tree"}
 
--- NVimTree
-lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.width = 28
-lvim.builtin.nvimtree.show_icons.tree_width = 28
-lvim.builtin.nvimtree.show_icons.git = 1
-lvim.builtin.nvimtree.indent_markers = 1
-lvim.builtin.nvimtree.highlight_opened_files = 1
-lvim.builtin.nvimtree.add_trailing = 1
-lvim.builtin.nvimtree.git_hl = 1
-lvim.builtin.nvimtree.group_empty = 1
---lvim.builtin.nvimtree.lsp_diagnostics = 1
+-- NVimTree (disabled, I use telescope)
+-- lvim.builtin.nvimtree.setup.view.side = "left"
+-- lvim.builtin.nvimtree.width = 28
+-- lvim.builtin.nvimtree.show_icons.tree_width = 28
+-- lvim.builtin.nvimtree.show_icons.git = 1
+-- lvim.builtin.nvimtree.indent_markers = 1
+-- lvim.builtin.nvimtree.highlight_opened_files = 1
+-- lvim.builtin.nvimtree.add_trailing = 1
+-- lvim.builtin.nvimtree.git_hl = 1
+-- lvim.builtin.nvimtree.group_empty = 1
+-- lvim.builtin.nvimtree.quit_on_open = 1
+
+-- TERMINAL
+lvim.builtin.terminal.direction = "horizontal"
+lvim.builtin.terminal.size = 28
+

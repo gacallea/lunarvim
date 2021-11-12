@@ -1,9 +1,8 @@
 vim.opt.showmatch = true
 vim.opt.autowrite  = true
-vim.opt.colorcolumn="80"
 vim.opt.listchars = {eol = '↲', tab = '▸ ', trail = '¬'}
-vim.opt.foldmethod="expr"
-vim.opt.foldexpr="nvim_treesitter#foldexpr()"
+-- vim.opt.foldmethod="expr"
+-- vim.opt.foldexpr="nvim_treesitter#foldexpr()"
 vim.opt.relativenumber = true
 vim.opt.undofile = false
 vim.opt.spell = true
@@ -29,7 +28,7 @@ require('looknfeel')
 -- key mappings
 require('mappings')
 -- languages, spelling, grammar
-require('lanngram')
+-- require('lanngram')
 
 -- builtin settings
 lvim.builtin.lualine.active = true
@@ -37,6 +36,7 @@ lvim.builtin.dap.active = true
 lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.bufferline.active = true
+lvim.builtin.nvimtree.active = false
 
 -- Treesitter
 lvim.builtin.treesitter.ensure_installed = {
@@ -69,5 +69,4 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- LSP
 lvim.lsp.diagnostics.virtual_text = false
 lvim.lsp.automatic_servers_installation = false
---lvim.lsp.templates_dir = join_paths(get_runtime_dir(), "after", "ftplugin")
 
