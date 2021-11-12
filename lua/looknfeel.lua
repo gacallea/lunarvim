@@ -55,6 +55,6 @@ lvim.builtin.lualine.extensions = {"nvim-tree"}
 -- lvim.builtin.nvimtree.quit_on_open = 1
 
 -- TERMINAL
-lvim.builtin.terminal.direction = "horizontal"
-lvim.builtin.terminal.size = 28
-
+-- lvim.builtin.terminal.direction = "horizontal"
+-- lvim.builtin.terminal.size = 28
+-- lvim.builtin.terminal.shade_terminals = false
