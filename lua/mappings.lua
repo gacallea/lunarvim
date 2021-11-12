@@ -1,9 +1,14 @@
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 
--- generic keymapping
+-- function keys row keymapping
 lvim.keys.normal_mode["<Esc>"] = ":nohlsearch<cr>" -- clear search highlight
 lvim.keys.normal_mode["<F1>"] = ":Dash<cr>" -- dash docs app
+-- GOTO PREVIEW
+lvim.keys.normal_mode["<F7>"] = "<cmd>lua require('goto-preview').close_all_win()<cr>"
+lvim.keys.normal_mode["<F8>"] = "<cmd>lua require('goto-preview').goto_preview_definition()<cr>"
+lvim.keys.normal_mode["<F9>"] = "<cmd>lua require('goto-preview').goto_preview_implementation()<cr>"
+-- TELESCOPE
 lvim.keys.normal_mode["<F10>"] = ":Telescope lsp_references<cr>"
 lvim.keys.normal_mode["<F11>"] = ":Telescope lsp_document_symbols<cr>"
 lvim.keys.normal_mode["<F12>"] = ":Telescope lsp_dynamic_workspace_symbols<cr>"
@@ -14,7 +19,6 @@ lvim.keys.normal_mode["<S-l>"] = nil
 lvim.keys.normal_mode["<leader><Left>"] = ":BufferPrevious<cr>"
 lvim.keys.normal_mode["<leader><Right>"] = ":BufferNext<cr>"
 lvim.keys.normal_mode["<leader><Down>"] = ":BufferClose<cr>"
-
 
 -- TELESCOPE
 lvim.builtin.which_key.mappings["T"] = {
