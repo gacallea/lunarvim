@@ -30,7 +30,8 @@ lvim.builtin.which_key.mappings["T"] = {
 }
 
 -- use telescope as file file_browser
-lvim.builtin.which_key.mappings["e"] = { "<cmd>Telescope file_browser<cr>", "Explorer", }
+-- lvim.builtin.which_key.mappings["e"] = { "<cmd>Telescope file_browser<cr>", "Explorer", }
+-- lvim.builtin.which_key.mappings["e"] = { ":lua require \"telescope\".extensions.file_browser path=%:p:h<cr>", "Explorer", }
 -- octo extension
 -- lvim.builtin.telescope.extensions.octo = true
 
@@ -47,6 +48,7 @@ lvim.builtin.which_key.mappings["t"] = {
 
 -- additional commands for ["g"]
 lvim.builtin.which_key.mappings["gf"] = { "<cmd>Telescope git_files<cr>", "Git Files", }
+-- lvim.builtin.which_key.mappings["gg"] = { ":lazygit float<cr>", "LazyGit", }
 lvim.builtin.which_key.mappings["gd"] = { "<cmd>DiffviewOpen -uno<cr>", "Git Diff", }
 lvim.builtin.which_key.mappings["gh"] = { "<cmd>DiffviewFileHistory<cr>", "File History", }
 lvim.builtin.which_key.mappings["gy"] = { "<cmd>lua require\"gitlinker\".get_buf_range_url(\"n\", {action_callback = require\"gitlinker.actions\".open_in_browser})<cr>', {silent = true})", "GitLinker" }
