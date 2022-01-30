@@ -61,16 +61,17 @@ lvim.builtin.lualine.sections.lualine_z = { "location" }
 lvim.builtin.lualine.extensions = {"nvim-tree"}
 
 -- NVimTree (disabled, I use telescope)
--- lvim.builtin.nvimtree.setup.view.side = "left"
--- lvim.builtin.nvimtree.width = 28
--- lvim.builtin.nvimtree.show_icons.tree_width = 28
--- lvim.builtin.nvimtree.show_icons.git = 1
--- lvim.builtin.nvimtree.indent_markers = 1
--- lvim.builtin.nvimtree.highlight_opened_files = 1
--- lvim.builtin.nvimtree.add_trailing = 1
--- lvim.builtin.nvimtree.git_hl = 1
--- lvim.builtin.nvimtree.group_empty = 1
--- lvim.builtin.nvimtree.quit_on_open = 1
+-- https://github.com/nvim-telescope/telescope-file-browser.nvim needs more love and config. using tree for now
+lvim.builtin.nvimtree.setup.view.side = "left"
+lvim.builtin.nvimtree.width = 28
+lvim.builtin.nvimtree.show_icons.tree_width = 28
+lvim.builtin.nvimtree.show_icons.git = 1
+lvim.builtin.nvimtree.indent_markers = 1
+lvim.builtin.nvimtree.highlight_opened_files = 1
+lvim.builtin.nvimtree.add_trailing = 1
+lvim.builtin.nvimtree.git_hl = 1
+lvim.builtin.nvimtree.group_empty = 1
+lvim.builtin.nvimtree.quit_on_open = 1
 
 -- TERMINAL
 -- lvim.builtin.terminal.direction = "horizontal"
