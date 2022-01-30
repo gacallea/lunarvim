@@ -7,6 +7,7 @@ lvim.plugins = {
     "folke/trouble.nvim",
     cmd = "TroubleToggle"
   },
+  { "nvim-telescope/telescope-file-browser.nvim" },
   {
     "lukas-reineke/indent-blankline.nvim",
     event = "BufRead",
