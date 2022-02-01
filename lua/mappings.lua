@@ -29,11 +29,11 @@ lvim.builtin.which_key.mappings["T"] = {
   m = { "<cmd>Telescope man_pages<cr>", "man pages" },
 }
 
--- use telescope as file file_browser
--- lvim.builtin.which_key.mappings["e"] = { "<cmd>Telescope file_browser<cr>", "Explorer", }
--- lvim.builtin.which_key.mappings["e"] = { ":lua require \"telescope\".extensions.file_browser path=%:p:h<cr>", "Explorer", }
+-- TELESCOPE FILE_BROWSER
+lvim.builtin.which_key.mappings["e"] = { "<cmd>Telescope file_browser<cr>", "Explorer", }
+
 -- octo extension
--- lvim.builtin.telescope.extensions.octo = true
+lvim.builtin.telescope.extensions.octo = true
 
 -- TROUBLE
 lvim.builtin.which_key.mappings["t"] = {

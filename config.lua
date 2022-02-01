@@ -36,7 +36,7 @@ lvim.builtin.dap.active = true
 lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.bufferline.active = true
--- lvim.builtin.nvimtree.active = false
+lvim.builtin.nvimtree.active = false
 
 -- Treesitter
 lvim.builtin.treesitter.ensure_installed = "maintained"

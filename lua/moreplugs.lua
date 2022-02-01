@@ -1,13 +1,13 @@
 -- Additional Plugins
 lvim.plugins = {
   { "marko-cerovac/material.nvim" },
+  { "kyazdani42/nvim-web-devicons"},
   { "rizzatti/dash.vim" },
   { "lewis6991/spellsitter.nvim" },
   {
     "folke/trouble.nvim",
     cmd = "TroubleToggle"
   },
-  { "nvim-telescope/telescope-file-browser.nvim" },
   {
     "lukas-reineke/indent-blankline.nvim",
     event = "BufRead",
@@ -119,6 +119,10 @@ lvim.plugins = {
     config = function()
       vim.g.matchup_matchparen_offscreen = { method = "popup" }
     end,
+  },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    require("telescope").load_extension "file_browser"
   },
   {
     "nvim-telescope/telescope-project.nvim",

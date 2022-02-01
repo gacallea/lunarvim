@@ -6,7 +6,6 @@ vim.g.material_style = "lighter"
 -- vim.g.material_style = "deep ocean"
 
 require('material').setup({
-
 	contrast = {
 		sidebars = true, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
 		floating_windows = true, -- Enable contrast for floating windows
@@ -60,8 +59,7 @@ lvim.builtin.lualine.sections.lualine_y = { "progress" }
 lvim.builtin.lualine.sections.lualine_z = { "location" }
 lvim.builtin.lualine.extensions = {"nvim-tree"}
 
--- NVimTree (disabled, I use telescope)
--- https://github.com/nvim-telescope/telescope-file-browser.nvim needs more love and config. using tree for now
+-- NVimTree is disabled, I use telescope-file-browser. This conf is here just in case I need to enable nvimtree
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.width = 28
 lvim.builtin.nvimtree.show_icons.tree_width = 28
