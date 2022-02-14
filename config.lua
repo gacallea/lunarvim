@@ -47,6 +47,7 @@ require('mappings')
 
 -- builtin settings
 lvim.builtin.lualine.active = true
+lvim.builtin.bufferline.active = true
 lvim.builtin.dap.active = true
 lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = true

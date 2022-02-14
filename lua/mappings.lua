@@ -17,9 +17,9 @@ lvim.keys.normal_mode["<F12>"] = ":Telescope lsp_dynamic_workspace_symbols<cr>"
 -- barbar
 lvim.keys.normal_mode["<S-h>"] = nil
 lvim.keys.normal_mode["<S-l>"] = nil
-lvim.keys.normal_mode["<leader><Left>"] = ":BufferPrevious<cr>"
-lvim.keys.normal_mode["<leader><Right>"] = ":BufferNext<cr>"
-lvim.keys.normal_mode["<leader><Down>"] = ":BufferClose<cr>"
+lvim.keys.normal_mode["<leader><Left>"] = ":BufferLineCyclePrev<cr>"
+lvim.keys.normal_mode["<leader><Right>"] = ":BufferLineCycleNext<cr>"
+lvim.keys.normal_mode["<leader><Down>"] = ":BufferKill<cr>"
 
 -- TELESCOPE
 lvim.builtin.which_key.mappings["T"] = {
