@@ -1,6 +1,6 @@
 -- Additional Plugins
 lvim.plugins = {
-  { "marko-cerovac/material.nvim" },
+  { "kaicataldo/material.vim" },
   { "kyazdani42/nvim-web-devicons"},
   { "rizzatti/dash.vim" },
   { "lewis6991/spellsitter.nvim" },
@@ -177,6 +177,9 @@ lvim.plugins = {
             css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
             })
     end,
+  },
+  {
+    "tidalcycles/vim-tidal"
   },
 }
 
