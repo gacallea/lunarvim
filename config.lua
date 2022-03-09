@@ -45,14 +45,10 @@ require('mappings')
 -- languages, spelling, grammar
 -- require('lanngram')
 
--- builtin settings
-lvim.builtin.lualine.active = true
-lvim.builtin.bufferline.active = true
-lvim.builtin.dap.active = true
+-- builtin settings (see look and feel for more)
 lvim.builtin.dashboard.active = true
+lvim.builtin.dap.active = true
 lvim.builtin.terminal.active = true
-lvim.builtin.bufferline.active = true
-lvim.builtin.nvimtree.active = false
 
 -- Treesitter
 lvim.builtin.treesitter.ensure_installed = "maintained"
