@@ -6,9 +6,11 @@ lvim.keys.normal_mode["<Esc>"] = ":nohlsearch<cr>" -- clear search highlight
 lvim.keys.normal_mode["<F1>"] = ":Dash<cr>" -- dash docs app
 lvim.keys.normal_mode["<F2>"] = ":MinimapToggle<cr>" -- toogle minimap
 -- GOTO PREVIEW
-lvim.keys.normal_mode["<F7>"] = "<cmd>lua require('goto-preview').close_all_win()<cr>"
-lvim.keys.normal_mode["<F8>"] = "<cmd>lua require('goto-preview').goto_preview_definition()<cr>"
-lvim.keys.normal_mode["<F9>"] = "<cmd>lua require('goto-preview').goto_preview_implementation()<cr>"
+lvim.keys.normal_mode["<F5>"] = "<cmd>lua require('goto-preview').close_all_win()<cr>"
+lvim.keys.normal_mode["<F6>"] = "<cmd>lua require('goto-preview').goto_preview_definition()<cr>"
+lvim.keys.normal_mode["<F7>"] = "<cmd>lua require('goto-preview').goto_preview_implementation()<cr>"
+-- TROUBLE
+lvim.keys.normal_mode["<F8>"] = ":TroubleToggle<cr>"
 -- TELESCOPE
 lvim.keys.normal_mode["<F10>"] = ":Telescope lsp_references<cr>"
 lvim.keys.normal_mode["<F11>"] = ":Telescope lsp_document_symbols<cr>"
@@ -40,15 +42,15 @@ lvim.builtin.which_key.mappings["t"] = {
   name = "+Trouble",
   r = { "<cmd>Trouble lsp_references<cr>", "References" },
   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
-  d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnosticss" },
+  d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
   q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
-  w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss" },
+  w = { "<cmd>Trouble workspace_diagnostics<cr>", "Wordspace Diagnostics" },
 }
 
 -- additional commands for ["g"]
 lvim.builtin.which_key.mappings["gf"] = { "<cmd>Telescope git_files<cr>", "Git Files", }
--- lvim.builtin.which_key.mappings["gg"] = { ":lazygit float<cr>", "LazyGit", }
+lvim.builtin.which_key.mappings["gg"] = { "<cmd>LazyGit<cr>", "LazyGit", }
 lvim.builtin.which_key.mappings["gd"] = { "<cmd>DiffviewOpen -uno<cr>", "Git Diff", }
 lvim.builtin.which_key.mappings["gh"] = { "<cmd>DiffviewFileHistory<cr>", "File History", }
 lvim.builtin.which_key.mappings["gy"] = { "<cmd>lua require\"gitlinker\".get_buf_range_url(\"n\", {action_callback = require\"gitlinker.actions\".open_in_browser})<cr>', {silent = true})", "GitLinker" }
