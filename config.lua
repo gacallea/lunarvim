@@ -42,8 +42,6 @@ vim.cmd('source ~/.config/lvim/vim/autocmd.vim')
 require('looknfeel')
 -- key mappings
 require('mappings')
--- languages, spelling, grammar
--- require('lanngram')
 
 -- builtin settings (see look and feel for more)
 lvim.builtin.dashboard.active = true
@@ -60,3 +58,4 @@ lvim.builtin.treesitter.highlight.enabled = true
 lvim.lsp.diagnostics.virtual_text = false
 lvim.lsp.automatic_servers_installation = true
 
+-- Trouble (see moreplugs)
